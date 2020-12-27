@@ -1,0 +1,193 @@
+BÀI TẬP CHƯƠNG 2
+I. Bài tập về cấu trúc tập hợp (set)
+Bài 1. Cho một vector chứa các số nguyên. Hãy đưa ra số lượng phần tử khác nhau trong vector đó.
+Ví dụ: Với inputVector = [1, 3, 3, 2], kết quả là 3.
+Bài 2. Anh Việt đang thông kê số liệu cho công ty, anh muốn giá trị nhỏ thứ hai ở trong một dãy số
+nguyên. Hãy giúp anh Việt tìm ra giá trị đó, nếu không có kết quả như yêu cầu thì trả về "NO". Ví dụ:
+Với arr = [1, 2, 3, 1, 1] thì kết quả sẽ là 2.
+Bài 3. Cho một dãy số nguyên arr và số nguyên k.
+Hãy tìm ra hai số:
+• Số m là số nhỏ nhất trong dãy lớn hơn k. Nếu không có thì m = -1.
+• Số n là số nhỏ nhất trong dãy lớn hơn hoặc bằng k. Nếu không có thì n = -1.
+Kết quả trả về là dãy gồm 2 số [m, n].
+Ví dụ:
+• Với arr = [1, 2, 3, 4, 5] và k = 4 thì setFunction(a, k) = [5, 4].
+• Với arr = [1, 2, 3] và k = 3 thì setFunction(a, k) = [-1, 3].
+Bài 4. Một vector được gọi là vector beautifull nếu một số trong vector đó chỉ xuất hiện đúng một
+lần. Cho vector v gồm các số nguyên. Cần xóa ít nhất bao nhiều phần tử trong v để vector v trở thành
+vector beautifull.
+Ví dụ:
+• Với v = [2, 3, 6, 3] thì kết quả là 1.
+Giải thích: Cần xóa một số 3.
+• Với v = [1, 2, 3] thì kết quả là 0.
+Bài 5. Anh Việt đang muốn tạo ra những từ khác nhau từ chuỗi word. Với một chu kỳ, Anh bắt đầu
+bằng cách lấy ký tự cuối cùng của chuỗi word và di chuyển nó lên đầu. Anh có thể thực hiện chu kỳ
+này rất nhiều lần.
+Ví dụ lên tục thực hiện chu kỳ biến đổi đó trên word = "abcda" thì anh Việt sẽ nhận được các từ
+"aabcd", "daabc", ...
+Anh Việt muốn biết rằng mình có thể tạo được bao nhiều từ riêng biệt bằng cách biến đổi trên.
+Ví dụ:
+• Với word = "abcd" thì kết quả sẽ là cyclicWord(word) = 4. Các từ mà anh Việt có thể nhận được
+là "abcd", "dabc", "cdab" và "bcda".
+Bài 6. Tính số lượng tối thiểu các ký tự cần thay đổi trong chuỗi str để chuỗi đó có k ký tự khác nhau
+hoặc xuất ra điều đó là không thể. Chuỗi str chỉ bao gồm những chữ cái latinh viết thường và cũng
+chỉ có thể thay thành những chữ cái latinh viết thường.
+Ví dụ:
+• Với str = "yandex", k = 6 thì kết quả sẽ là diversity(s, k) = "0"
+• Với str = "google", k = 7 thì kết quả sẽ là diversity(s, k) = "impossible".
+• Với str = "codelearn", k = 9 thì kết quả sẽ là diversity(s, k) = "1"Bài 7. Trong ngôn ngữ Aramic từ có thể đại diện cho các đối tượng. Các từ trong Aramic có tính chất
+đặc biệt:
+• Một từ là một gốc nếu nó không chứa cùng một chữ cái nhiều lần.
+• Một gốc và tất cả các hoán vị của nó cũng chỉ đại diện cho cùng một đối tượng.
+• Từ gốc x của một từ y là từ chứa tất cả các chữ cái xuất hiện trong y theo cách mà mỗi chữ cái
+xuất hiện một lần. Ví dụ: gốc của "aaaa", "aa", "aaa" là "a", gốc của "aabb", "bab", "baabb", "ab" là
+"ab".
+• Bất kỳ từ nào trong Aramic đại diện cho cùng một đối tượng với gốc của nó.
+Bạn có một dãy từ Aramic. Hãy đưa ra số lượng đối tượng khác nhau trong dãy đó.
+Ví dụ:
+• Với words = ["a","aa","aaa","ab","abb"] thì kết quả là: aramic(words) = 2.
+Bài 8. An có một danh sách các sản phẩm trong siêu thị nhưng thật không may trong danh sách lại
+có những sản phẩm xuất hiện nhiều lần. Bạn hãy giúp An làm lại danh sách sao cho một sản phẩm
+chỉ xuất hiện một lần trong danh sách và các sản phẩm xuất hiện theo thứ tăng dần trong từ điển.
+Ví dụ:
+• Với products = ["watermelon", "grapes", "grapes", "apple", "grapes"]
+thì getDistinctProducts(products) = ["apple", "grapes", "watermelon"].
+II. Bài tập về cấu trúc hàng đợi (queue)
+Bài 9. Số siêu nguyên tố là số:
+• Bản thân nó là số nguyên tố.
+• Khi xóa đi lần lượt các chữ số sau cùng của nó thì số mới vẫn là số nguyên tố.
+Ví dụ 2393 là số siêu nguyên tố vì 2393, 239, 23, 2 là số nguyên tố.
+Cho một số n, hãy đưa số dãy số siêu nguyên tố nhỏ hơn hoặc bằng n đã được sắp xếp tăng dần.
+Ví dụ:
+• Với n = 30; thì superPrimeNumber(n) = [2, 3, 5, 7, 23, 29];
+Vì các số 2, 3, 5, 7, 23 và 29 đều là số siêu nguyên tố và nhỏ hơn hoặc bằng 30.
+Bài 10. Cho một mảng các số nguyên arr và một số nguyên dương k. Hãy viết hàm trả về các phần
+tử âm đầu tiên trong cửa số k. Nếu không tồn tại số âm nào output 0.
+Ví dụ:
+• Với arr = [-8 2 3 -6 10], k = 2 thì các cửa số lần lượt chứa các giá trị: [-8, 2], [2, 3], [3, -6], [-6, 10]
+nên kết quả trả về sẽ có dạng firstNegative(arr, k) = [-8, 0, -6, -6]
+Bài 11. Cho một ma trận trong đó mỗi ô trong ma trận có thể có các giá trị 0, 1 hoặc 2 có nghĩa sau:
+• 0: Là một ô trống.
+• 1: Là một quả cam tươi.
+• 2: Là một quả cam bị hỏng.
+Chúng ta phải xác định thời gian tối thiểu mà tất cả các quả cam bị hỏng. Một quả cam hỏng ở chỉ
+số [i, j] có thể làm hỏng quả cam tươi khác ở các chỉ số [i-1, j], [i + 1, j], [i, j-1], [i, j + 1] (lên , xuống,
+trái và phải). Nếu không thể bị hỏng tất cả quả cam thì trả về -1.
+Ví dụ:
+• Với matrix = [
+[2, 1, 0, 2, 1],
+[1, 0, 1, 2, 1],
+[1, 0, 0, 2, 1]].Thì đầu ra có dạng rotOrange(matrix) = 2
+• Với matrix = [
+[2, 1, 0, 2, 1],
+[0, 0, 1, 2, 1],
+[1, 0, 0, 2, 1]].
+Thì đầu ra có dạng rotOrange(matrix) = -1
+Bài 12. Do những ngày hè quá nóng bức và nhàm chán nên Tide đã nghĩ ra một trò chơi khá thú vị
+với queue. Ban đầu trong queue có 5 số 1, 2, 3, 4, 5 với mỗi lượt chơi Tide sẽ xóa phần tử ở đầu
+queue và cho 2 phần tử đó xuống cuối của queue và cứ tiếp tục cho đến khi Tide cảm thấy mệt và
+không chơi được nữa.
+Ví dụ tại lượt chơi thứ nhất trạng thái của queue là 1, 2, 3 ,4 ,5
+Tại lượt chơi thứ 2 trạng thái của queue là 2, 3, 4, 5, 1, 1
+Các bạn hãy giúp Tide xác định xem số đầu tiên của queue tại lượt chơi thứ N nhé.
+Bài 13. Giả sử có một đường tròn. Có n trạm xăng trên vòng tròn đó. Bạn được cho hai tập dữ
+liệu.
+1. Lượng xăng mà mọi trạm xăng có.
+2. Khoảng cách từ trạm xăng đó đến trạm xăng kế tiếp.
+Tính điểm đầu tiên mà từ đó một xe tải có thể kết thúc hành trình trên vòng tròn (Xe tại sẽ dừng lại
+tại mỗi trạm xăng và nó có dung tích vô hạn). Độ phức tạp thời gian kỳ vọng là O(n). Giả sử với một
+lít xăng, xe tải có thể đi được một đơn vị quãng đường.
+Ví dụ, cho 4 trạm xăng với khối lượng xăng và khoảng cách tời trạm kế tiếp là các cặp giá trị {4, 6},
+{6, 5}, {7, 3} và {4, 5}. Điểm đầu tiên mà từ đó xe tải có thể thực hiện chuyến đi vòng tròn là trạm
+xăng thứ hai. Đầu ra phải là “start = 1” (chỉ số của trạm xăng thứ hai).
+Bài 14. Một hiệu trưởng muốn đi thăm các ký túc xá (có tất cả n ký túc). Ông ta rất bận nên chỉ
+thăm được k (k ≤ n) nơi gần nhất. Các ký túc xá được tọa lạc trên một mặt phẳng hai chiều. Hãy
+giúp ông ấy, biết rằng bạn có tọa độ của n ký túc và vị trí hiện tại của ông ấy có tọa độ là O(0,0).
+Chú ý: khoảng cách giữa điểm P(x,y) tới gốc O(0,0) là khoảng cách Euclidean.
+Ví dụ:
+Input: {(1, 0), (2, 1), (3, 6), (-5, 2), (1, -4)}, k = 3
+Output: {(1, 0), (2, 1), (1, -4)}
+Bài 15. Monk hiện có một mảng các số nguyên A. Với mỗi chỉ số i, anh ta muốn tìm tích của các số
+lớn nhất, số lớn thứ hai và số lớn thứ ba trong khoảng [1, i].
+Chú ý: các số có thể giống nhau nhưng chúng phải khác nhau về chỉ số.
+Bài 16. Cho một mảng số nguyên và một số nguyên k. Tìm số lớn nhất trong từng mảng con liên tiếp
+kích thước k.
+Ví dụ, với mảng: arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6}, k = 3
+Kết quả là: 3 3 4 5 5 5 6, vì
+Số lớn nhất của {1, 2, 3} is 3
+Số lớn nhất của {2, 3, 1} is 3
+Số lớn nhất của {3, 1, 4} is 4Bài 17. Cho một mảng số nguyên và một số nguyên k. Tính tổng các số nhỏ nhất và lớn nhất trong
+từng mảng con liên tiếp kích thước k.
+Ví dụ, với mảng: arr[] = {2, 5, -1, 7, -3, -1, -2}, k = 4
+Kết quả là: 18, vì
+{2, 5, -1, 7}, min + max = -1 + 7 = 6
+{5, -1, 7, -3}, min + max = -3 + 7 = 4
+{-1, 7, -3, -1}, min + max = -3 + 7 = 4
+{7, -3, -1, -2}, min + max = -3 + 7 = 4
+Tổng tất cả min & max = 6 + 4 + 4 + 4 = 18
+III. Bài tập về cấu trúc ánh xạ (map)
+Bài 18. Cho một chuỗi s, hãy đưa ra một dãy lần lượt là các ký tự và số lần xuất hiện của nó, các ký
+tự sắp xếp theo thự tự từ điển.
+Ví dụ:
+• Với s = "aacccd" thì countChar = ["a 2", "c 3", "d 1"].
+• Với s = "aabbbca" thì countChar = ["a 3", "b 3", "c 1"].
+Bài 19. Bạn đã được cung cấp một chuỗi s làm đầu vào và bạn phải in biểu mẫu đã sửa đổi. Chuỗi
+được sửa đổi theo cách sau:
+• Những ký tự giống nhau chỉ lấy duy nhất một ký tự.
+• Ký tự nào có tần số xuất hiện trong chuỗi s nhiều hơn được sắp xếp trước.
+• Những ký tự có cùng tần số xuất hiện thì sắp xếp theo thứ từ từ điển từ nhỏ đến lớn.
+Ví dụ:
+• Với s = "codelearn" thì modifyString = "eacdlnor".
+• Với s = "helloworld" thì modifyString = "lodehrw".
+Bài 20. Cho 2 mảng các chuỗi arr1, arr2 dưới dạng vector. Ứng với mỗi chuỗi trong arr2 bạn cần tìm
+một chuỗi có thứ tự từ điển nhỏ nhất trong arr1 mà đứng sau arr2 trong từ điển. Nếu không có
+chuỗi nào trong arr1 thỏa mãn thì output "-1".
+Ví dụ
+• Với arr1 = ["codelearn","learncode", "io"], arr2 = ["code","war","io"]
+Thì kết quả mong muốn greaterString(arr1, arr2) = ["codelearn","-1","learncode"]
+Bài 21. Cho hai dãy số nguyên arr1 và arr2, hãy tính tổng những số xuất hiện trong cả hai dãy, lưu ý
+là mỗi số chỉ được tính một lần.
+Ví dụ:
+• Với arr1 = [6, 7, 5, 4, 6, 8], arr2 = [2, 5, 7, 5, 3] thì sumOfCommon(arr1, arr2) = 12.
+• Với arr1 = [5,6,7], arr2 = [2,3,4] thì sumOfCommon(arr1, arr2) = 0.
+Bài 22. Cho một mảng các chuỗi chuỗi chữ thường với các phần tử có thể trùng lặp. Hãy đưa ra
+khoảng cách lớn nhất giữa hai phần tử giống nhau ở trong dãy đó.
+Nếu không có bất kỳ hai chuỗi nào giống nhau thì trả về 0.
+Ví dụ:
+• Với arr = ["codelearn", "io", "programmer", "codelearn", "programmer"]. thì
+maximumDifference(arr) = 3.Giải thích: hai phần tử giống nhau có khoảng cách lớn nhất trong trường hợp trên là arr[0] và
+arr[3].
+Bài 23. Cho mỗi dãy số nguyên và một dãy số nguyên arr và một số nguyên dương sum.
+Hãy kiểm tra xem dãy số có tồn tại hai số có tổng bằng sum hay không.
+Ví dụ:
+• Với arr = [2,4,-1,9,8], sum = 6 thì checkSum(arr, sum) = true.
+• Với arr = [2,5,3,8,9], sum = 3 thì checkSum(arr, sum) = false.
+• Với arr = [4,7,3,5], sum = 6 thì checkSum(arr, sum) = false.
+Bài 24. Cho một dãy gồm các số nguyên, hãy đưa ra số thỏa mãn là số lớn nhất trong những số có
+tần số bé nhất.
+Ví dụ:
+• Với arr = [2,2,4,4,7,7,7] thì largestElement(arr) = 4.
+• Với arr = [1,3,4,5,5] thì largestElement(arr) = 4.
+Bài 25. Cho một danh bạ điện thoại và danh sách các tên. Ứng với mỗi tên trong danh sách hãy
+đếm xem tên này là bắt đầu của bao nhiêu tên trong danh bạ điện thoại, hay nói cách khác hãy
+đếm xem tên này là prefix của bao nhiêu tên trong danh bạ.
+Ví dụ:
+• Với contacts = ["Codelearn", "Codewar"], names = ["Code", "Codel", "io"]
+thì countPrefix(contacts, names) = [2,1,0].
+Bài 26. Cho danh sách các sản phẩm của 2 kho hàng A và B. Do chiến lược kinh doanh bạn được
+giao nhiệm nhập các sản phẩm từ kho B vào kho A sao cho những sản phẩm nào đã có trong kho A
+thì không nhập.
+Ví dụ:
+• Với A = ["Banana", "Banana", "Apple"], B = ["Orange", "Apple", "Banana", "Watermelon"],
+thì mergeProducts(A, B) = [true, false, false, true].
+Lưu ý: Sản phẩm thứ 2 và 3 trong kho B là "Apple" và "Banana" sẽ không được nhập vì trong kho A
+đã có sản phẩm như vậy.
+IV. Bài tập về cấu trúc đống (heap)
+Bài 27. Cài đặt cây tìm kiếm nhị phân ngẫu nhiên - Treap. Treap là một cấu trúc kết hợp giữa cây
+tìm kiếm nhị phân và heap, tức là một cây nhị phân có 2 khóa, trong đó một khóa thỏa mãn tính
+chất của heap, còn một khóa thỏa mãn tính chất của cây tìm kiếm. Khóa heap có vai trò giữ cho cây
+không quá cao.
+Bài 28. Viết một thuật toán hiệu quả để in ra k phần tử lớn nhất trong mảng. Ví dụ, với mảng {1, 23,
+12, 9, 30, 2, 50}, in ra 3 phần tử lớn nhất (k = 3) là 50, 30 và 23.
+Bài 29. Cài đặt cấu trúc dữ liệu hàng đợi ưu tiên sử dụng cấu trúc đống nhị phân (binary heap).
+V.

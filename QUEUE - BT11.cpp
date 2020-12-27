@@ -1,5 +1,3 @@
-// using BFS
-// https://www.geeksforgeeks.org/minimum-time-required-so-that-all-oranges-become-rotten/
 #include<bits/stdc++.h>
 using namespace std;
 int orgRotting(vector<vector<int>> &grid)

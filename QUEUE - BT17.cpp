@@ -26,4 +26,3 @@ int main()
 	int k = 4;
 	cout<<"Sum Max And Min of Sub Arr = "<<maxMinSlidingWindow(arr,k);
 }
-

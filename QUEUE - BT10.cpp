@@ -1,4 +1,3 @@
-// https://www.geeksforgeeks.org/first-negative-integer-every-window-size-k/
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> firstNegative(vector<int> a, int k)
@@ -22,10 +21,7 @@ vector<int> firstNegative(vector<int> a, int k)
 				ret.push_back(0);
 				continue;
 			}
-            if(i + (k - 1) >= q.front())
-			{
-				ret.push_back(a[q.front()]);
-			}
+            if(i + (k - 1) >= q.front())	ret.push_back(a[q.front()]);
 			else ret.push_back(0);
         }
     }

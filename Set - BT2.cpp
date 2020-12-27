@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
 	vector<int> a = {1,2,3,1,1};
+	if(a.size()<2)	{cout<<"NO";return 0;}
 	set<int> s;
 	for(int i=0;i<a.size();i++)
 	{

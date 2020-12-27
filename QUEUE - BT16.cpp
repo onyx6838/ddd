@@ -1,20 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-void sliding_window_maximum(vector<int> & ARR, int K) 
-{
-	deque<pair<int, int>> window;
-	for (int i = 0; i < ARR.size(); i++) 
-	{
-	    while (!window.empty() && window.back().first < ARR[i])		window.pop_back();
-	    window.push_back(make_pair(ARR[i], i));
-	
-	    while(window.front().second <= i - K)
-	    window.pop_front();
-	
-		if(i>=K-1)
-	    cout << (window.front().first) << ' ';
-	}
-}
 vector<int> maxSlidingWin(vector<int> &nums,int k)
 {
 	int z = nums.size();
@@ -41,7 +26,6 @@ int main()
 	}
 	//vector<int> a ={4,7,2,5 ,6, 3, 9, 1};
 	//int k = 3;
-	//sliding_window_minimum(a,k);
 	vector<int> s = maxSlidingWin(t,k);
 	for(auto i:s)	cout<<i<<" ";
 }
