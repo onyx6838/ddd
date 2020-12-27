@@ -1,96 +1,59 @@
 #include<bits/stdc++.h>
 using namespace std;
-struct DFS
+struct Graph
 {
 	int n,m;
-	vector<int> A[100];
-	
+	vector<int> A[10005];
 	map<int,int> d;
 	void input()
 	{
-		cout<<"Nhap n ,m"<<endl;
-		cin>>n>>m;
-		while(m--)
-		{
-			int p,q;
-			cin>>p>>q;
+		cout<<"Nhap n ,m"<<endl; 	cin>>n>>m;
+		cout<<"Nhap canh"<<endl;
+		while(m--) {
+			int p,q;	cin>>p>>q;
 			A[p].push_back(q);
 		}
-		for(int i=1;i<=n;i++)
-		{
-			dfs(0,i);
-			cout<<endl;
-		}
 	}
-	void dfs(int s,int f)
+	void bfs(int s,int f)	// dfs thay =  stack
 	{
-		stack<int> Q;
-		Q.push(s);
-		while(Q.size())
-		{
-			int u = Q.top(); Q.pop();
-			if(u == f)
-			{
-				induong(s,f);
-				return;
-			}
-			for(int i = 0;i < A[u].size();i++)
-			{
-				int v = A[u][i];
-				d[v] = u;
-				Q.push(v);
-			}
-		}
-		cout<<"Khong di duoc";
-	}
-	void induong(int s,int f)
-	{
-		if(s==f)	cout<<s;
-		else
-		{
-			induong(s,d[f]);
-			cout<<"->"<<f;
-		}
-	}
-};
-struct BFS
-{
-	int n,m;
-	vector<int> A[100];
-	
-	map<int,int> d;
-	void input()
-	{
-		cout<<"Nhap n ,m"<<endl;
-		cin>>n>>m;
-		while(m--)
-		{
-			int p,q;
-			cin>>p>>q;
-			A[p].push_back(q);
-		}
-		for(int i=1;i<n;i++)
-		{
-			bfs(0,i);cout<<endl;
-		}
-	}
-	void bfs(int s,int f)
-	{
+		int dis[100005] = {};
 		queue<int> Q;
 		Q.push(s);
+		dis[s] = 0;
 		while(Q.size())
 		{
 			int u = Q.front(); Q.pop();
-			if(u == f)
+			if(u == f){  induong(s,f);  return; }
+			for(int next:A[u])
 			{
-				induong(s,f);
-				return;
+				if(!dis[next])
+				{
+					dis[next] = dis[u] + 1;
+					d[next] = u;
+					Q.push(next);
+				}
 			}
-			for(int i = 0;i < A[u].size();i++)
+		}
+		cout<<"Khong di duoc";
+	}
+	void dfs(int s,int f)
+	{
+		int dis[100005] = {};
+		stack<int> Q;
+		Q.push(s);
+		dis[s] = 0;
+		while(Q.size())
+		{
+			int u = Q.top(); Q.pop();	// #
+			if(u == f) {  induong(s,f);	return; }
+			for(int next:A[u])
 			{
-				int v = A[u][i];
-				d[v] = u;
-				Q.push(v);
+				if(!dis[next])
+				{
+					dis[next] = dis[u] + 1;
+					d[next] = u;
+					Q.push(next);
+				}
 			}
 		}
 		cout<<"Khong di duoc";
@@ -98,28 +61,15 @@ struct BFS
 	void induong(int s,int f)
 	{
 		if(s==f)	cout<<s;
-		else
-		{
-			induong(s,d[f]);
-			cout<<"->"<<f;
-		}
+		else { induong(s,d[f]); cout<<"->"<<f; }
 	}
 };
 int main()
 {
-	DFS g;
-	g.input();
+	Graph g;  g.input();
+	for(int i=1;i<=g.n;i++)
+	{
+		g.dfs(0,i);
+		cout<<endl;
+	}
 }
-//6 12
-//0 1
-//0 2
-//0 3
-//1 3
-//1 4
-//2 5
-//3 2
-//3 5
-//3 6
-//4 3
-//4 6
-//6 5
